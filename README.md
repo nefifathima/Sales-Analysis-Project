@@ -13,11 +13,11 @@ Sales-Analysis-Project
 
 ##  Steps to Build the Project  
 
-Step 1: Set Up the Project Structure**  
+Step 1: Set Up the Project Structure 
 1️. Create the project folder with the above structure.  
 2️. Store raw sales data inside the `data` folder.  
 
-Step 2: Load and Clean Data**  
+Step 2: Load and Clean Data
 1️. Create `load_data.py' 
 2️. Load the dataset using Pandas  
 
