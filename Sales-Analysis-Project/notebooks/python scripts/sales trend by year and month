@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the cleaned dataset
+df = pd.read_csv("data/cleaned_sales_data_with_year_month.csv")
+
+# Convert "Order Date" to datetime if not already
+df["Order Date"] = pd.to_datetime(df["Order Date"], errors="coerce")
+
+# Aggregate total sales by Year and Month
+monthly_sales = df.groupby(["Year", "Month"])["Sales"].sum().reset_index()
+
+# Pivot table for better visualization
+sales_pivot = monthly_sales.pivot(index="Month", columns="Year", values="Sales")
+
+# Plot heatmap
+plt.figure(figsize=(10,6))
+sns.heatmap(sales_pivot, cmap="Blues", annot=True, fmt=".0f", linewidths=0.5)
+plt.title("Monthly Sales Trend (Year-wise)")
+plt.xlabel("Year")
+plt.ylabel("Month")
+plt.show()

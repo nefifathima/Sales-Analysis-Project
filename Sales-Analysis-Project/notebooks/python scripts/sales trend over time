@@ -1,0 +1,11 @@
+# Aggregate sales per month
+monthly_sales = df.groupby(["Year", "Month"])["Sales"].sum().reset_index()
+
+# Plot the sales trend
+plt.figure(figsize=(12,6))
+sns.lineplot(x=monthly_sales.index, y=monthly_sales["Sales"], marker="o")
+plt.title("Monthly Sales Trend")
+plt.xlabel("Month")
+plt.ylabel("Total Sales")
+plt.grid(True)
+plt.show()

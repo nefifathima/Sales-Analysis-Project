@@ -1,0 +1,28 @@
+# Import necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the cleaned dataset
+df = pd.read_csv("data/cleaned_sales_data.csv")
+
+# Display the first 5 rows
+print(df.head())
+
+# Display basic information
+print(df.info())
+
+# Check for missing values again
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+# Summary statistics
+print("\nSummary Statistics:")
+print(df.describe())
+
+# Convert "Order Date" to datetime, keeping track of errors
+df["Order Date"] = pd.to_datetime(df["Order Date"], errors="coerce")
+
+# Extract Year and Month
+df["Year"] = df["Order Date"].dt.year
+df["Month"] = df["Order Date"].dt.month

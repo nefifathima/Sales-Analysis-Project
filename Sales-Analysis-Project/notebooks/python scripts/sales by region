@@ -1,0 +1,11 @@
+# Group by City and sum sales
+city_sales = df.groupby("City")["Sales"].sum().nlargest(10)
+
+# Plot
+plt.figure(figsize=(10,5))
+city_sales.plot(kind="bar", color="orange")
+plt.title("Top 10 Cities by Sales")
+plt.xlabel("City")
+plt.ylabel("Total Sales")
+plt.xticks(rotation=45)
+plt.show()

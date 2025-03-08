@@ -1,0 +1,6 @@
+#import necessary libraries
+ import pandas as pd
+#load dataset
+ df = pd.read_csv("data/train.csv")#update filename
+#display the first 5 rows
+ print(df.head())

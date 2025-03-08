@@ -1,0 +1,10 @@
+#check the size of data(rows and columns)
+ print(f"Dataset contains{df.shape[0]} rows and {df.shape[1]} columns.")
+#view column names
+ print(df.columns)
+#check datatypes of each column
+ print(df.info())
+#check for missing values
+ print(df.isnull().sum())
+#get summary statistics
+ print(df.describe())
